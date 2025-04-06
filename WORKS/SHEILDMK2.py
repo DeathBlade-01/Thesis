@@ -178,6 +178,8 @@ class Scheduler:
             task.priority = task.avg_execution + max_successor_rank
             return task.priority
         
+        for task in self.tasks:
+            print(f"Task {task.task_id}: Priority (Upward Rank) = {task.priority}")
         # Calculate upward rank for all tasks
         for task in self.tasks:
             calculate_upward_rank(task)
